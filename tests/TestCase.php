@@ -1,10 +1,10 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Uchup07\LaravelZoom\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
+use Uchup07\LaravelZoom\LaravelZoomServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Uchup07\\LaravelZoom\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            LaravelZoomServiceProvider::class,
         ];
     }
 
@@ -28,8 +28,12 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
 
+        config()->set('laravel-zoom.account_id', 'account_id');
+        config()->set('laravel-zoom.credentials','credentials==');
+        config()->set('laravel-zoom.api_url','https://api.zoom.us/v2/');
+
         /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_laravel-zoom_table.php.stub';
         $migration->up();
         */
     }
