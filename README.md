@@ -43,15 +43,70 @@ return [
 
 ## Usage
 
+### Create Meeting
+
 ```php
-$laravelZoom = new Uchup07\LaravelZoom();
-echo $laravelZoom->echoPhrase('Hello, Uchup07!');
+$data = [
+            'topic' => 'Title Topic',
+            'default_password'=>false,
+            'start_time' => '2024-10-31T08:06:01Z',
+            'duration' => 60,
+            'timezone' => 'Asia/Jakarta',
+            "type"=> 2,
+            'settings' => [
+                'host_video' => true,
+                'participant_video' => true,
+                'audio' => true,
+                'approval_type' => 2,
+                'waiting_room' => true,
+                'join_before_host' => true
+            ],
+        ];
+
+$meeting = \Uchup07\LaravelZoom\Facades\LaravelZoom::createMeeting('userid@mail.com', $data);
+
+
 ```
+
+### Update Meeting
+```php
+$data = [
+            'topic' => 'Title Topic',
+            'default_password'=>false,
+            'start_time' => '2024-10-31T08:06:01Z',
+            'duration' => 60,
+            'timezone' => 'Asia/Jakarta',
+            "type"=> 2,
+            'settings' => [
+                'host_video' => true,
+                'participant_video' => true,
+                'audio' => true,
+                'approval_type' => 2,
+                'waiting_room' => true,
+                'join_before_host' => true
+            ],
+        ];
+        
+$meeting = \Uchup07\LaravelZoom\Facades\LaravelZoom::updateMeeting(94064237172, $data);
+```
+
+### Delete Meeting
+```php
+$meetingId = 94064237172;
+$meeting = \Uchup07\LaravelZoom\Facades\LaravelZoom::deleteMeeting($meetingId);
+```
+
+### Get a Meeting
+```php
+$meetingId = 94064237172;
+$meeting = \Uchup07\LaravelZoom\Facades\LaravelZoom::getMeeting($meetingId);
+```
+
 
 ## Testing
 
 ```bash
-composer test
+./vendor/bin/pest
 ```
 
 ## Changelog
