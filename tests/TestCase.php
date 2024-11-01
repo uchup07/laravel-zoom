@@ -29,8 +29,8 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         config()->set('laravel-zoom.account_id', 'account_id');
-        config()->set('laravel-zoom.credentials','credentials==');
-        config()->set('laravel-zoom.api_url','https://api.zoom.us/v2/');
+        config()->set('laravel-zoom.credentials', 'credentials==');
+        config()->set('laravel-zoom.api_url', 'https://api.zoom.us/v2/');
 
         /*
         $migration = include __DIR__.'/../database/migrations/create_laravel-zoom_table.php.stub';
