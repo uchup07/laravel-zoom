@@ -17,7 +17,7 @@ class LaravelZoomServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-zoom')
-            ->hasConfigFile('laravel-zoom');
+            ->hasConfigFile();
         //            ->hasViews()
         //            ->hasMigration('create_laravel_zoom_table')
         //            ->hasCommand(LaravelZoomCommand::class);

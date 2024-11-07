@@ -23,11 +23,11 @@ class LaravelZoom
 
     public function __construct()
     {
-        $this->account_id = config('laravel-zoom.account_id');
-        //        $this->client_id = config('laravel-zoom.client_id');
-        //        $this->client_secret = config('laravel-zoom.client_secret');
-        $this->credentials = config('laravel-zoom.credentials');
-        $this->api_url = config('laravel-zoom.api_url');
+        $this->account_id = config('zoom.account_id');
+        //        $this->client_id = config('zoom.client_id');
+        //        $this->client_secret = config('zoom.client_secret');
+        $this->credentials = config('zoom.credentials');
+        $this->api_url = config('zoom.api_url');
 
         $this->access_token = $this->getAccessToken();
 

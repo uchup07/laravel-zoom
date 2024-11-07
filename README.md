@@ -102,6 +102,12 @@ $meetingId = 94064237172;
 $meeting = \Uchup07\LaravelZoom\Facades\LaravelZoom::getMeeting($meetingId);
 ```
 
+### Get All Meeting By User
+```php
+$userId = 'user@email.com';
+$meetings = \Uchup07\LaravelZoom\Facades\LaravelZoom::listMeetings($userId);
+```
+
 
 ## Testing
 
