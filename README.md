@@ -45,6 +45,136 @@ return [
 
 ### Create Meeting
 
+#### Default parameters for
+
+```php
+$arrayVar = [
+    "agenda" => "<string>",
+    "default_password" => false,
+    "duration" => "<integer>",
+    "password" => "<string>",
+    "pre_schedule" => false,
+    "recurrence" => [
+        "type" => 2,
+        "end_date_time" => "<dateTime>",
+        "end_times" => 1,
+        "monthly_day" => 1,
+        "monthly_week" => 1,
+        "monthly_week_day" => 6,
+        "repeat_interval" => "<integer>",
+        "weekly_days" => "1",
+    ],
+    "schedule_for" => "<string>",
+    "settings" => [
+        "additional_data_center_regions" => ["<string>", "<string>"],
+        "allow_multiple_devices" => "<boolean>",
+        "alternative_hosts" => "<string>",
+        "alternative_hosts_email_notification" => true,
+        "approval_type" => 2,
+        "approved_or_denied_countries_or_regions" => [
+            "approved_list" => ["<string>", "<string>"],
+            "denied_list" => ["<string>", "<string>"],
+            "enable" => "<boolean>",
+            "method" => "deny",
+        ],
+        "audio" => "both",
+        "audio_conference_info" => "<string>",
+        "authentication_domains" => "<string>",
+        "authentication_exception" => [
+            ["email" => "<email>", "name" => "<string>"],
+            ["email" => "<email>", "name" => "<string>"],
+        ],
+        "authentication_option" => "<string>",
+        "auto_recording" => "none",
+        "breakout_room" => [
+            "enable" => "<boolean>",
+            "rooms" => [
+                [
+                    "name" => "<string>",
+                    "participants" => ["<string>", "<string>"],
+                ],
+                [
+                    "name" => "<string>",
+                    "participants" => ["<string>", "<string>"],
+                ],
+            ],
+        ],
+        "calendar_type" => 2,
+        "close_registration" => false,
+        "cn_meeting" => false,
+        "contact_email" => "<string>",
+        "contact_name" => "<string>",
+        "email_notification" => true,
+        "encryption_type" => "enhanced_encryption",
+        "focus_mode" => "<boolean>",
+        "global_dial_in_countries" => ["<string>", "<string>"],
+        "host_video" => "<boolean>",
+        "in_meeting" => false,
+        "jbh_time" => 10,
+        "join_before_host" => false,
+        "language_interpretation" => [
+            "enable" => "<boolean>",
+            "interpreters" => [
+                ["email" => "<email>", "languages" => "<string>"],
+                ["email" => "<email>", "languages" => "<string>"],
+            ],
+        ],
+        "sign_language_interpretation" => [
+            "enable" => "<boolean>",
+            "interpreters" => [
+                ["email" => "<email>", "sign_language" => "<string>"],
+                ["email" => "<email>", "sign_language" => "<string>"],
+            ],
+        ],
+        "meeting_authentication" => "<boolean>",
+        "meeting_invitees" => [["email" => "<email>"], ["email" => "<email>"]],
+        "mute_upon_entry" => false,
+        "participant_video" => "<boolean>",
+        "private_meeting" => "<boolean>",
+        "registrants_confirmation_email" => "<boolean>",
+        "registrants_email_notification" => "<boolean>",
+        "registration_type" => 1,
+        "show_share_button" => "<boolean>",
+        "use_pmi" => false,
+        "waiting_room" => "<boolean>",
+        "watermark" => false,
+        "host_save_video_order" => "<boolean>",
+        "alternative_host_update_polls" => "<boolean>",
+        "internal_meeting" => false,
+        "continuous_meeting_chat" => [
+            "enable" => "<boolean>",
+            "auto_add_invited_external_users" => "<boolean>",
+        ],
+        "participant_focused_meeting" => false,
+        "push_change_to_calendar" => false,
+        "resources" => [
+            [
+                "resource_type" => "whiteboard",
+                "resource_id" => "<string>",
+                "permission_level" => "editor",
+            ],
+            [
+                "resource_type" => "whiteboard",
+                "resource_id" => "<string>",
+                "permission_level" => "editor",
+            ],
+        ],
+        "auto_start_meeting_summary" => false,
+        "auto_start_ai_companion_questions" => false,
+    ],
+    "start_time" => "<dateTime>",
+    "template_id" => "<string>",
+    "timezone" => "<string>",
+    "topic" => "<string>",
+    "tracking_fields" => [
+        ["field" => "<string>", "value" => "<string>"],
+        ["field" => "<string>", "value" => "<string>"],
+    ],
+    "type" => 2,
+];
+```
+
+Example:
 ```php
 $data = [
             'topic' => 'Title Topic',
