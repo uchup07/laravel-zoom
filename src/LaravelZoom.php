@@ -93,6 +93,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -120,6 +121,7 @@ class LaravelZoom
         } catch (ClientException $th) {
             return [
                 'status' => false,
+                'code' => $th->getCode(),
                 'message' => $th->getMessage(),
             ];
         }
@@ -146,6 +148,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -171,6 +174,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -201,6 +205,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -228,6 +233,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -260,6 +266,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -292,6 +299,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -326,6 +334,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -351,6 +360,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -376,6 +386,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -402,6 +413,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -428,6 +440,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
@@ -454,6 +467,7 @@ class LaravelZoom
         } catch (ClientException $e) {
             return [
                 'status' => false,
+                'code' => $e->getCode(),
                 'message' => $e->getMessage(),
             ];
         }
