@@ -7,7 +7,7 @@ it('can test', function () {
 });
 
 it('can create meeting', function () {
-    //$zoom = new LaravelZoom();
+    // $zoom = new LaravelZoom();
 
     $data = [
         'topic' => 'Title Topic 3',
@@ -32,7 +32,7 @@ it('can create meeting', function () {
 });
 
 it('can remove meeting', function () {
-    //$zoom = new LaravelZoom();
+    // $zoom = new LaravelZoom();
 
     $meeting = LaravelZoom::deleteMeeting('95952338096');
 
