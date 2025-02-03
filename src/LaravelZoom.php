@@ -112,12 +112,17 @@ class LaravelZoom
             $response = $this->client->request('PATCH', 'meetings/'.$meetingId, [
                 'json' => $params,
             ]);
-            $res = json_decode($response->getBody(), true);
-
-            return [
-                'status' => true,
-                'data' => $res,
-            ];
+            if ($response->getStatusCode() === 204) {
+                return [
+                    'status' => true,
+                    'message' => 'Meeting Update Successfully',
+                ];
+            } else {
+                return [
+                    'status' => false,
+                    'message' => 'Something went wrong',
+                ];
+            }
         } catch (ClientException $th) {
             return [
                 'status' => false,
