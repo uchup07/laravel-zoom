@@ -477,4 +477,23 @@ class LaravelZoom
             ];
         }
     }
+
+    public function getMeetingSummary($meetingId)
+    {
+        try {
+            $response = $this->client->request('GET', 'meetings/'.$meetingId.'/meeting_summary');
+            $data = json_decode($response->getBody(), true);
+
+            return [
+                'status' => true,
+                'data' => $data,
+            ];
+        } catch (ClientException $e) {
+            return [
+                'status' => false,
+                'code' => $e->getCode(),
+                'message' => $e->getMessage(),
+            ];
+        }
+    }
 }
