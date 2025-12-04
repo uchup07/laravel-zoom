@@ -584,9 +584,9 @@ class LaravelZoom
 
     /**
      * Report User Meeting
-     * @param $userId
-     * @param array $params
+     *
      * @return array
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function reportUserMeeting($userId, array $params = [])
