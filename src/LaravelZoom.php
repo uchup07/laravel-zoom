@@ -478,6 +478,12 @@ class LaravelZoom
         }
     }
 
+    /**
+     * Get Meeting Summary
+     * @param $meetingId
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     public function getMeetingSummary($meetingId)
     {
         try {
@@ -495,5 +501,78 @@ class LaravelZoom
                 'message' => $e->getMessage(),
             ];
         }
+    }
+
+    /**
+     * Report Meeting
+     * @param $meetingId
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function reportMeetings($meetingId)
+    {
+        try {
+            $response = $this->client->request('GET', 'report/meetings/'.$meetingId);
+            $data = json_decode($response->getBody(), true);
+        } catch (ClientException $e) {
+            return [
+                'status' => false,
+                'code' => $e->getCode(),
+                'message' => $e->getMessage(),
+            ];
+        }
+        return [
+            'status' => true,
+            'data' => $data,
+        ];
+    }
+
+    /**
+     * Report Meeting Participants
+     * @param $meetingId
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function reportMeetingParticipants($meetingId)
+    {
+        try {
+            $response = $this->client->request('GET', 'report/meetings/'.$meetingId.'/participants');
+            $data = json_decode($response->getBody(), true);
+        } catch (ClientException $e) {
+            return [
+                'status' => false,
+                'code' => $e->getCode(),
+                'message' => $e->getMessage(),
+            ];
+        }
+        return [
+            'status' => true,
+            'data' => $data,
+        ];
+    }
+
+    /**
+     * Report Meeting Summary
+     * @param $meetingId
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function reportMeetingSummary($meetingId)
+    {
+        try {
+            $response = $this->client->request('GET', 'report/meetings/'.$meetingId.'/summary');
+            $data = json_decode($response->getBody(), true);
+        } catch (ClientException $e) {
+            return [
+                'status' => false,
+                'code' => $e->getCode(),
+                'message' => $e->getMessage(),
+            ];
+        }
+
+        return [
+            'status' => true,
+            'data' => $data,
+        ];
     }
 }
