@@ -581,4 +581,32 @@ class LaravelZoom
             'data' => $data,
         ];
     }
+
+    /**
+     * Report User Meeting
+     * @param $userId
+     * @param array $params
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function reportUserMeeting($userId, array $params = [])
+    {
+        try {
+            $response = $this->client->request('GET', 'report/users/'.$userId.'/meetings', [
+                'query' => $params,
+            ]);
+            $data = json_decode($response->getBody(), true);
+        } catch (ClientException $e) {
+            return [
+                'status' => false,
+                'code' => $e->getCode(),
+                'message' => $e->getMessage(),
+            ];
+        }
+
+        return [
+            'status' => true,
+            'data' => $data,
+        ];
+    }
 }
