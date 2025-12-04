@@ -480,8 +480,9 @@ class LaravelZoom
 
     /**
      * Get Meeting Summary
-     * @param $meetingId
+     *
      * @return array
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getMeetingSummary($meetingId)
@@ -505,8 +506,9 @@ class LaravelZoom
 
     /**
      * Report Meeting
-     * @param $meetingId
+     *
      * @return array
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function reportMeetings($meetingId)
@@ -521,6 +523,7 @@ class LaravelZoom
                 'message' => $e->getMessage(),
             ];
         }
+
         return [
             'status' => true,
             'data' => $data,
@@ -529,8 +532,9 @@ class LaravelZoom
 
     /**
      * Report Meeting Participants
-     * @param $meetingId
+     *
      * @return array
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function reportMeetingParticipants($meetingId)
@@ -545,6 +549,7 @@ class LaravelZoom
                 'message' => $e->getMessage(),
             ];
         }
+
         return [
             'status' => true,
             'data' => $data,
@@ -553,8 +558,9 @@ class LaravelZoom
 
     /**
      * Report Meeting Summary
-     * @param $meetingId
+     *
      * @return array
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function reportMeetingSummary($meetingId)
