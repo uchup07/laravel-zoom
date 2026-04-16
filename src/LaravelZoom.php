@@ -4,6 +4,7 @@ namespace Uchup07\LaravelZoom;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
 
 class LaravelZoom
 {
@@ -45,7 +46,7 @@ class LaravelZoom
      *
      * @return mixed
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     protected function getAccessToken()
     {
@@ -74,7 +75,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function createMeeting(string $userId, array $params)
     {
@@ -104,7 +105,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function updateMeeting(string $meetingId, array $params)
     {
@@ -137,7 +138,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function getMeeting(string $meetingId)
     {
@@ -164,7 +165,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function listMeetings(string $userId)
     {
@@ -190,7 +191,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function deleteMeeting(string $meetingId)
     {
@@ -222,7 +223,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function listUpcomingMeetings(string $userId)
     {
@@ -282,7 +283,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function rescheduleMeeting(string $meetingId, array $params)
     {
@@ -315,7 +316,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function endMeeting($meetingId)
     {
@@ -350,7 +351,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function meetingRecordLists($meetingId)
     {
@@ -376,7 +377,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function getMeetingRecordingSettings($meetingId)
     {
@@ -403,7 +404,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function meetingRecordListsByUser(string $userId)
     {
@@ -430,7 +431,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function pastMeetingParticipants($meetingId, $page_size = 30)
     {
@@ -457,13 +458,14 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function pastMeetingInstances($meetingId)
     {
         try {
             $response = $this->client->request('GET', 'past_meetings/'.$meetingId.'/instances');
             $data = json_decode($response->getBody(), true);
+
             return [
                 'status' => true,
                 'data' => $data,
@@ -483,7 +485,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function reportPastMeetingParticipants($meetingId, $page_size = 30)
     {
@@ -509,7 +511,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function getMeetingSummary($meetingId)
     {
@@ -535,7 +537,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function reportMeetings($meetingId)
     {
@@ -561,7 +563,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function reportMeetingParticipants($meetingId)
     {
@@ -587,7 +589,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function reportMeetingSummary($meetingId)
     {
@@ -613,7 +615,7 @@ class LaravelZoom
      *
      * @return array
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function reportUserMeeting($userId, array $params = [])
     {
