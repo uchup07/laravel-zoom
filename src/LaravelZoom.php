@@ -452,6 +452,32 @@ class LaravelZoom
     }
 
     /**
+     * Get past meeting instances
+     * Must Paid account on a Pro or higher plan
+     *
+     * @return array
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function pastMeetingInstances($meetingId)
+    {
+        try {
+            $response = $this->client->request('GET', 'past_meetings/'.$meetingId.'/instances');
+            $data = json_decode($response->getBody(), true);
+            return [
+                'status' => true,
+                'data' => $data,
+            ];
+        } catch (ClientException $e) {
+            return [
+                'status' => false,
+                'code' => $e->getCode(),
+                'message' => $e->getMessage(),
+            ];
+        }
+    }
+
+    /**
      * Report Past Meeting Participants
      * Must Paid account on a Pro or higher plan
      *
